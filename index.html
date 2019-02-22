@@ -1,13 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
 		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
-
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,30 +28,421 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
 	</head>
+
 	<body>
+
 		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>Final presentation</h1>
+					<h4>Traffic control using Reinforcement Learning algorithms</h4>
+					<p>Thai-An THAN TRONG</p><br>
+					<p>Télécom ParisTech | Actemium Paris Transport</p>
+					<p>
+						<small>February 19th 2019</small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Introduction</h2>
+						<h3>Cost of traffic jam in France</h3>
+						<ul>
+							<li>€17 billions in 2013 : fuel, premature vehicle wear, working time loss, ...</li>
+							<li>€1943 per year per household</li>
+							<li>135 hours of traffic jam per conductor</li>
+						</ul>
+					</section>
+
+					<!--<section>-->
+						<!--<h2>Introduction</h2>-->
+						<!--<p>Traffic jam causes many challenges</p>-->
+						<!--<ul>-->
+							<!--<li>Financial</li>-->
+							<!--<li>Human</li>-->
+							<!--<li>Environmental</li>-->
+							<!--&lt;!&ndash;<li>Technical</li>&ndash;&gt;-->
+						<!--</ul>-->
+					<!--</section>-->
+				</section>
+
+				<section>
+					<section>
+						<h2>Actemium Paris Transport</h2>
+						<h3>Vinci Energies group</h3>
+						<ul>
+							<li>Specialized in information systems for transportation infrastructures and Smart Cities</li>
+							<li>About a 100 employees</li>
+							<li>AIXOM : AI projects</li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Traffic control</h2>
+						<h3>Prevent traffic congestion</h3>
+						<ul>
+							<li>DIRIF : Direction Interdépartementale des Routes d'Ile-de-France</li>
+							<li>Ile-de-France's highways : rush hours</li>
+							<li>Access control : regulate vehicles entrance</li>
+						</ul><br><br>
+						<h4>Set a traffic light at the merging ramp</h4>
+					</section>
+					<section>
+						<h2>Traffic control</h2>
+						<h3>No regulation</h3>
+						<img width=250 height=450 data-src="./data/no_regulation.png">
+					</section>
+					<section>
+						<h2>Traffic control</h2>
+						<h3>Existing solution</h3>
+						<ul>
+							<li>Induction loop detectors : throughput and occupation rate data every 20 seconds</li>
+							<li>Thresholds and red light to control merge ramp</li>
+						</ul>
+						<img width=400 height=250 data-src="./data/fundamental_diagram.png">
+					</section>
+					<section>
+						<h2>Traffic control</h2>
+						<h3>Current system</h3>
+						<img width=500 height=450 data-src="./data/regulation.png">
+					</section>
+					<section>
+						<h2>Traffic control</h2>
+						<h3>Current system</h3>
+						<img height=450 data-src="./data/dirif.jpg">
+					</section>
+					<section data-background="#0052cc" data-background-transition="zoom">
+						<h2>AI for traffic control</h2>
+						<ul>
+							<li>Artificial Intelligence : powerful, robust, many applications</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<!--<section>-->
+						<!--<h2>An Introduction to Reinforcement Learning</h2>-->
+						<!--<img width="400" height="400" data-src="./data/rl_ml.png">-->
+					<!--</section>-->
+
+					<section>
+						<h3>An Introduction to Reinforcement Learning</h3>
+						<p>Learn by trial and error</p>
+						<img width="600" height="200" data-src="./data/rl_representation.png"></br>
+
+						<img width="200" height="200" data-src="./data/cartpole_start.gif">
+						<img width="200" height="200" data-src="./data/cartpole_rl.gif">
+					</section>
+
+					<!--<section>-->
+						<!--<h3>Cartpole example</h3>-->
+						<!--<img width="300" height="300" data-src="./data/cartpole_start.gif">-->
+						<!--<img width="300" height="300" data-src="./data/cartpole_rl.gif">-->
+					<!--</section>-->
+
+					<!--<section>-->
+						<!--<h3>Robot example</h3>-->
+					<!--</section>-->
+
+					<section>
+						<h3>Robot example</h3>
+						<img width="250" height="200" data-src="./data/q_learning_example.png">
+						<table style="font-size: 24px;">
+							<thead>
+							<tr>
+								<th></th>
+								<th>Up</th>
+								<th>Down</th>
+								<th>Left</th>
+								<th>Right</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Cell (0, 0)</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Cell (0, 1)</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Cell (n, p)</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							</tbody>
+						</table>
+
+						<p style="font-size: 30px;">Store information from experiences:<p>
+						<p class="fragment" style="font-size: 30px;">Given an environment’s state, which action was good ?</p>
+					</section>
+
+					<section>
+						<h3>Reinforcement learning algorithms</h3>
+						<p>Q-Learning Algorithm</p>
+						<!--<img width="300" height="100"  data-src="./data/q_formula.png">-->
+						<!--</br>-->
+						<img width="650" height="70" data-src="./data/bellman_update.png">
+						<img data-src="./data/q_presentation.png">
+					</section>
+
+					<!--<section>-->
+						<!--<h3>Reinforcement learning algorithms</h3>-->
+						<!--<p>When storing is too complex, use new methods</p>-->
+						<!--<img data-src="./data/dqn_presentation.png">-->
+					<!--</section>-->
+
+					<section data-background="#009933" data-background-transition="zoom">
+						<h3>Traffic control and RL</h3>
+						<p>How do we move from a robot game to a large road network with traffic jams ?</p>
+					</section>
+
+					<section>
+						<h3>State, action, reward</h3>
+						<p style="font-size: 30px;">Define concepts in a traffic regulation context</p>
+						<table style="font-size: 30px;">
+							<thead>
+							<tr>
+								<th>State</th>
+								<th>Action</th>
+								<th>Reward</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td class="fragment">Throughput, occupation rate</td>
+								<td class="fragment">Red/Green light, phase duration</td>
+								<td class="fragment">Number of near standstill vehicles, delay, queue length</td>
+							</tr>
+							</tbody>
+						</table>
+						</br>
+						<p class="fragment" style="font-size: 30px;">When storing is too complex, use new methods</p>
+						<img class="fragment" data-src="./data/dqn_traffic.png">
+					</section>
+
+					<section>
+						<h3>Experience replay</h3>
+						<p>Store experience tuples</p>
+						<img data-src="./data/experience_replay.png">
+						<p>Avoid forgetting previous experiences</p>
+						<p>Reduce correlations between experiences</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Using a traffic simulator : SUMO</h2>
+					</section>
+					<section data-background-video="./data/FigureEight.mp4">
+					</section>
+					<!--<section data-background="./data/noisy_osm.png">-->
+						<!--&lt;!&ndash;<h2>Using a traffic simulator : SUMO</h2>&ndash;&gt;-->
+						<!--<h3>Select network using OpenStreetMap ... </h3>-->
+						<!--<p class="fragment">... And convert it into a usable network</p>-->
+					<!--</section>-->
+					<!--<section data-background-video="./data/Noisy.mp4">-->
+					<!--</section>-->
+					<section>
+						<h3>How can we have access to SUMO's data ?</h3>
+						<ul>
+							<li>TraCI API</li>
+							<li>Retrieves traffic values and modifies directly on simulator</li>
+						</ul>
+						<p>Use TraCI with Python</p>
+					</section>
+					<section>
+						<h3>TraCI example</h3>
+						<pre><code class="python" data-trim contenteditable style="font-size: 18px;">
+# --- VALUE RETRIEVAL ---
+# Returns a list of ids of all vehicles currently running within the scenario
+id_list = traci.vehicle.getIDList()
+
+# Returns the speed of the vehicle with ID veh_id within the last step [m/s]
+speed = traci.vehicle.getSpeed(veh_id)
+
+						</code></pre>
+					</section>
+					<section>
+						<h3>TraCI example</h3>
+						<pre><code class="python" data-trim contenteditable style="font-size: 18px;">
+# --- STATE CHANGING ---
+# Set traffic light phase
+traci.trafficlight.setPhase(tl_id, phase)
+
+# Sets traffic light phase duration of the current phase in seconds
+traci.trafficlight.setPhaseDuration(tl_id, duration)
+
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Overall project</h2>
+					<section>
+						<h3>Flow Framework</h3>
+						<p>Computational framework for deep RL and control experiments for traffic microsimulation. </p>
+					</section>
+					<section>
+						<h3>Flow Framework</h3>
+						<img width="600" height="400" data-src="./data/flow_diagram.png">
+					</section>
+					<section>
+						<h3>Environment Class</h3>
+						<pre><code class="python" data-trim contenteditable style="font-size: 18px;">
+class TrafficLightEnv(Env):
+	self.__init__():
+		# ...
+
+	self.get_state(self):
+		# collect current state
+		return throughput, occupancy
+
+	self._apply_rl_actions(self,rl_actions):
+		# set traffic light
+		traci.trafficlight.setPhase(...)
+
+	self.compute_reward(self):
+		# reward = ...
+		return reward
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Model creation</h3>
+						<img width="800" height="420" data-src="./data/congestion.png">
+					</section>
+					<section>
+						<h3>Reward</h3>
+
+						<table style="font-size: 24px;">
+							<thead>
+							<tr>
+								<th>Rewards</th>
+								<th>Advantages</th>
+								<th>Drawbacks</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Penalize near standstill vehicles</td>
+								<td>Explicit reward, set coefficients</td>
+								<td>Difficult to adjust</td>
+							</tr>
+							<tr>
+								<td>Compute delay of each vehicle based on their speed</td>
+								<td>Global reward, conductor-oriented</td>
+								<td>Converges slowly</td>
+							</tr>
+							</tbody>
+						</table>
+
+						<img width=650 height=250 data-src="./data/min-delay.png">
+					</section>
+
+					<section data-background-video="./data/Cycle_converged.mp4">
+					</section>
+				</section>
+
+				<section>
+                    <section>
+					    <h2>Results</h2>
+                    </section>
+                    <section data-background-video="./data/Stage_RL_fast.mp4">
+                    </section>
+					<!--<section>-->
+						<!--<h2>Results</h2>-->
+						<!--<img width=1500 height=320 data-src="./data/space_time_comparison.png">-->
+					<!--</section>-->
+					<section>
+					    <h2>Results</h2>
+						<img width="1000" height="500" data-src="./data/co2_plot_rl.png">
+                    </section>
+				</section>
+
+
+				<!--<section>-->
+					<!--<h2>Future Improvements</h2>-->
+					<!--<p>On the project itself</p>-->
+					<!--<ul>-->
+						<!--&lt;!&ndash;<li>Vectorial rewards</li>&ndash;&gt;-->
+						<!--<li>Vehicle types</li>-->
+					<!--</ul>-->
+
+					<!--<p  class="fragment">and further perspectives ...</p>-->
+					<!--<ul class="fragment">-->
+						<!--<li>Make real tests</li>-->
+						<!--<li>Multi-agent Reinforcement Learning</li>-->
+					<!--</ul>-->
+
+				<!--</section>-->
+
+
+				<section>
+					<h2>Conclusion</h2>
+				</section>
+
+				<section>
+					<h2>Thank you for your attention !</h2>
+				</section>
+
 			</div>
+
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+
+			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
 		</script>
+
 	</body>
 </html>
